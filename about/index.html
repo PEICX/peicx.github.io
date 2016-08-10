@@ -284,7 +284,15 @@
           
 
 
-          <% if (config.disqus_shortname && page.comments){ %>
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="about/index.html"
+           data-title="为什么你要写博客" data-url="http://peicx.github.io/about/index.html">
+      </div>
+    
+  </div>
+  <% if (config.disqus_shortname && page.comments){ %>
 <!--likaci tab.js init begin-->
 <script type="text/javascript" src="/js/tab.js"></script>
 <script type="text/javascript">
@@ -328,6 +336,12 @@
 <!--likaci add duoshuo end-->
 </section>
 <% } %>
+
+
+
+
+
+
         </div>
         
           
