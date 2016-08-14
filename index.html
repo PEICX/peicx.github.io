@@ -325,9 +325,9 @@
 <li>下载inux-kbuild,链接:(<a href="http://http.kali.org/kali/pool/main/l/linux-tools/" target="_blank" rel="external">http://http.kali.org/kali/pool/main/l/linux-tools/</a>) 具体版本参见自己的主机；</li>
 <li>编译linux-kbuild; dkpg -i linux-kbuild-4.3_4.3.1-2kali1_amd64.deb</li>
 <li>下载linux-header-common和主机版本对应的linux-header。链接 （<a href="http://http.kali.org/kali/pool/main/l/linux/）" target="_blank" rel="external">http://http.kali.org/kali/pool/main/l/linux/）</a> ,具体版本参见自己的主机 首先编译linux-header-common</li>
-<li>dkpg -i linux-headers-4.3.0-kali1-common_4.3.3-5kali4_amd64.deb<br>最后编译linux-header dkpg -i<br>linux-headers-4.3.0-kali1-amd64_4.3.3-5kali4_amd64.deb</li>
+<li>dkpg -i linux-headers-4.3.0-kali1-common_4.3.3-5kali4_amd64.deb<br>最后编译linux-header dkpg -i linux-headers-4.3.0-kali1-amd64_4.3.3-5kali4_amd64.deb 搞定。</li>
 </ol>
-<p>搞定。<br>PS：如果编译过程中遇到缺少什么依赖，就去上面网站中下载缺少的依赖既可解决问题。</p>
+<p>PS：如果编译过程中遇到缺少什么依赖，就去上面网站中下载缺少的依赖既可解决问题。</p>
 <h2 id="安装QQ遇到的问题"><a href="#安装QQ遇到的问题" class="headerlink" title="安装QQ遇到的问题"></a>安装QQ遇到的问题</h2><p>网上的教程安装QQ会推荐大家安装wine后再安装一个 ia32-libs  的32位支持，经过我失败几次和阅读更多的博客后，发现实际上这个ia32-libs早就废除了，大家以后找教程不要再百度找了，真是害人呀，搜到的教程排的靠前的全是又老有旧的，现在技术变化这么快，很多教程早就失效了。推荐大家找尽量到一个相关的论坛去找教程，这样的教程比较新。</p>
 <p>解决方法：用虚拟机里的QQ，说真的，经过一番设置后，虚拟机里的QQ还是非常好用的。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>首先，我觉得之所以碰到了这么多坑是因为参考的教程过于老旧，而新技术变化过快。我觉得以后找教程尽量去论坛或者其他活跃度比较高的社区去找，没有论坛或者社区的情况下尽量留意搜索引擎给的教程的日期，和版本，不同的话完全可以不去参考。</p>
@@ -715,7 +715,31 @@
       
         
           
-            
+            <p>我是通过网上的教程学的KMP算法，网上的教程确实非常详细，但是关于next数组实现中的</p>
+<p> else<br>        j=next[j]; </p>
+<p>这一句大部分网上的教程都是没有过多解释，或者根本就没有解释为什么。对于我这个刚学这个算法的人来说，根本想不通为什么。今天终于理解了，所以总结一下。</p>
+<pre><code>void get_next(string s,int next[])
+{
+    int length=s.length();
+    int i=0,j=-1;
+    next[0]=-1;
+    while(i&lt;length)
+    {
+        if(j==-1||s[i]==s[j])  /*s[i]表示后缀的单个字符*/
+                               /*s[j]表示前缀的单个字符*/
+        {
+            ++i;
+            ++j;
+            next[i]=j;
+        }
+        else
+        j=next[j];  /*若j值不相同，则j值回溯*/
+    }
+}
+</code></pre><p>这一句的解释为</p>
+<p>失配时，模式串向右移动的位数为：已匹配字符数 - 失配字符的上一位字符所对应的最大长度值</p>
+<p>关于这个知识点，有一个博客讲的特别好： <a href="http://wiki.jikexueyuan.com/project/kmp-algorithm/define.html" target="_blank" rel="external">http://wiki.jikexueyuan.com/project/kmp-algorithm/define.html</a><br>想深入理解的可以去看看。</p>
+
           
         
       
