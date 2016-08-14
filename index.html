@@ -315,11 +315,16 @@
 </blockquote>
 <p>事物的存在一定有他的合理性，一定我有哪一点做错了。</p>
 <p>果然我发现我问题出在我看的第一个教程上了，教程《安装完kali需要做的20件事》第一件事让我换成国内的快速源，教程本无错，但是教程里的是针对以前kali的源，所以我在这个版本换上错误的源，官方把2.0的kali命名为sana，不同版本的系统的源不同。其实不知如此百度上还有很多教程也很老旧，我估计还会有很多新手重新犯我这种错误。</p>
-<h2 id="虚拟机安装成功后缺少header"><a href="#虚拟机安装成功后缺少header" class="headerlink" title="虚拟机安装成功后缺少header"></a>虚拟机安装成功后缺少header</h2><p>安装完vmware后，发现打开提示缺少linux-header，按照网上教程“apt-get install linux-headers-$(uname -r)” 提示 “无法定位软件包” ，按照网上的更换源的方法，更新后问题依然存在。说实话，这个是我见过最恶心的坑，找了好久教程，试了无数方法都没解决。最后要疯的时候找到了解决方法，方法如下：</p>
+<h2 id="虚拟机安装成功后缺少header"><a href="#虚拟机安装成功后缺少header" class="headerlink" title="虚拟机安装成功后缺少header"></a>虚拟机安装成功后缺少header</h2><p>安装完vmware后，发现打开提示缺少linux-header，按照网上教程</p>
+<pre><code>apt-get install linux-headers-$(uname -r)
+</code></pre><p> 提示 </p>
+<pre><code>无法定位软件包 linux-headers-4.0.0-kali1-amd64
+无法按照正则表达式 linux-headers-4.0.0-kali1-amd64 找到任何软件包
+</code></pre><p> 按照网上的更换源的方法，更新后问题依然存在。说实话，这个是我见过最恶心的坑，找了好久教程，试了无数方法都没解决。最后要疯的时候找到了解决方法，方法如下：</p>
 <ol>
-<li>下载inux-kbuild,链接:(<a href="http://http.kali.org/kali/pool/main/l/linux-tools/)具体版本参见自己的主机；" target="_blank" rel="external">http://http.kali.org/kali/pool/main/l/linux-tools/)具体版本参见自己的主机；</a></li>
+<li>下载inux-kbuild,链接:(<a href="http://http.kali.org/kali/pool/main/l/linux-tools/" target="_blank" rel="external">http://http.kali.org/kali/pool/main/l/linux-tools/</a>) 具体版本参见自己的主机；</li>
 <li>编译linux-kbuild; dkpg -i linux-kbuild-4.3_4.3.1-2kali1_amd64.deb</li>
-<li>下载linux-header-common和主机版本对应的linux-header。链接（<a href="http://http.kali.org/kali/pool/main/l/linux/）,具体版本参见自己的主机" target="_blank" rel="external">http://http.kali.org/kali/pool/main/l/linux/）,具体版本参见自己的主机</a> 首先编译linux-header-common</li>
+<li>下载linux-header-common和主机版本对应的linux-header。链接 （<a href="http://http.kali.org/kali/pool/main/l/linux/）" target="_blank" rel="external">http://http.kali.org/kali/pool/main/l/linux/）</a> ,具体版本参见自己的主机 首先编译linux-header-common</li>
 <li>dkpg -i linux-headers-4.3.0-kali1-common_4.3.3-5kali4_amd64.deb<br>最后编译linux-header dkpg -i<br>linux-headers-4.3.0-kali1-amd64_4.3.3-5kali4_amd64.deb</li>
 </ol>
 <p>搞定。<br>PS：如果编译过程中遇到缺少什么依赖，就去上面网站中下载缺少的依赖既可解决问题。</p>
