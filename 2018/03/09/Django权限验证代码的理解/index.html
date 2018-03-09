@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://peicx.github.io">
   <title>Django权限验证代码的理解 | 小蜗牛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景用户登录后才能进行的操作，如何写才能避免越权发生？即没一步需要权限的操作怎么进行权限验证。 验证是否登录的一个简单写法，在敏感操前都验证一下 12if not request.user.is_authenticated():    return HttpResponse(content=&amp;apos;未登录&amp;apos;) Django提供了一个装饰器，@login_required(login_">
+  <meta name="description" content="背景用户登录后才能进行的操作，如何写才能避免越权发生？即每一步需要权限的操作怎么进行权限验证。 验证是否登录的一个简单写法，在敏感操前都验证一下 12if not request.user.is_authenticated():    return HttpResponse(content=&amp;apos;未登录&amp;apos;) Django提供了一个装饰器，@login_required(login_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django权限验证代码的理解">
 <meta property="og:url" content="http://peicx.github.io/2018/03/09/Django权限验证代码的理解/index.html">
 <meta property="og:site_name" content="小蜗牛">
-<meta property="og:description" content="背景用户登录后才能进行的操作，如何写才能避免越权发生？即没一步需要权限的操作怎么进行权限验证。 验证是否登录的一个简单写法，在敏感操前都验证一下 12if not request.user.is_authenticated():    return HttpResponse(content=&amp;apos;未登录&amp;apos;) Django提供了一个装饰器，@login_required(login_">
+<meta property="og:description" content="背景用户登录后才能进行的操作，如何写才能避免越权发生？即每一步需要权限的操作怎么进行权限验证。 验证是否登录的一个简单写法，在敏感操前都验证一下 12if not request.user.is_authenticated():    return HttpResponse(content=&amp;apos;未登录&amp;apos;) Django提供了一个装饰器，@login_required(login_">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T04:16:22.839Z">
+<meta property="og:updated_time" content="2018-03-09T11:50:36.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django权限验证代码的理解">
-<meta name="twitter:description" content="背景用户登录后才能进行的操作，如何写才能避免越权发生？即没一步需要权限的操作怎么进行权限验证。 验证是否登录的一个简单写法，在敏感操前都验证一下 12if not request.user.is_authenticated():    return HttpResponse(content=&amp;apos;未登录&amp;apos;) Django提供了一个装饰器，@login_required(login_">
+<meta name="twitter:description" content="背景用户登录后才能进行的操作，如何写才能避免越权发生？即每一步需要权限的操作怎么进行权限验证。 验证是否登录的一个简单写法，在敏感操前都验证一下 12if not request.user.is_authenticated():    return HttpResponse(content=&amp;apos;未登录&amp;apos;) Django提供了一个装饰器，@login_required(login_">
   
     <link rel="alternative" href="/atom.xml" title="小蜗牛" type="application/atom+xml">
   
@@ -85,9 +85,9 @@
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pei-zheng-67/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="bilibili" target="_blank" href="https://space.bilibili.com/18254985/#/" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
 			</div>
 		</nav>
@@ -126,9 +126,9 @@
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pei-zheng-67/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="bilibili" target="_blank" href="https://space.bilibili.com/18254985/#/" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
 				</div>
 			</nav>
@@ -174,7 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>用户登录后才能进行的操作，如何写才能避免越权发生？即没一步需要权限的操作怎么进行权限验证。</p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>用户登录后才能进行的操作，如何写才能避免越权发生？即每一步需要权限的操作怎么进行权限验证。</p>
 <p>验证是否登录的一个简单写法，在敏感操前都验证一下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">if not request.user.is_authenticated():</div><div class="line">    return HttpResponse(content=&apos;未登录&apos;)</div></pre></td></tr></table></figure>
 <p>Django提供了一个装饰器，@login_required(login_url=’/login/‘)，未登录会自动跳转，但是装饰器只能用在函数前，类不能用，但是我们使用面向对象的方法实现的，所以这里我们需要写一个检测是否登录的功能类，继承这个类，就会检测未登录自动跳转</p>
@@ -185,8 +185,8 @@
 <p>@method_decorator 装饰器将函数修饰器转换为方法修饰器，这样就可以用在实例上。</p>
 <h5 id="dispatch"><a href="#dispatch" class="headerlink" title="dispatch"></a>dispatch</h5><p>dispathch会返回一个函数，我们可以把所有需要的传给这个函数的参数传给它。常用来实现回调函数。</p>
 <h5 id="super"><a href="#super" class="headerlink" title="super"></a>super</h5><p>以前我一看到 super 就想到父类！其实不是，super 指的是 MRO 中的下一个类！</p>
-<p>super并不是一个函数，是一个类名，形如super(B, self)事实上调用了super类的初始化函数，产生了一个super对象；</p>
-<p>返回一个代理对象让你能够调用一些继承过来的方法，查找的机制遵循mro规则；为什么需要super？假如你在子类重写了父类同名的一个方法，同时又想调用父类的方法，这时super，就十分有用了，其实不一定是父类，一般是继承中的下一个类。这也是这个类实现权限验证的核心，覆盖dispatch函数，在调用它之前进行权限验证，之后通过super调用 MRO 中的下一个类中 dispathch 函数。</p>
+<p>super并不是一个函数，是一个类名，形如super(B, self)事实上调用了super类的初始化函数，产生了一个super对象，返回一个代理对象让你能够调用一些继承过来的方法，查找的机制遵循mro规则；</p>
+<p>为什么需要super？假如你在子类重写了父类同名的一个方法，同时又想调用父类的方法，这时super，就十分有用了，其实不一定是父类，一般是继承中的下一个类。这也是这个类实现权限验证的核心，覆盖dispatch函数，在调用它之前进行权限验证，之后通过super调用 MRO 中的下一个类中 dispathch 函数。</p>
 <p>所以上面代码的意思是，通过super生成了一个类，这个类继承中的是下一个类的临时实例，并调用了下一个类的dispatch函数。</p>
 
       
@@ -401,11 +401,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Kali</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">Kali</a>
               </li>
             
             <div class="clearfix"></div>
