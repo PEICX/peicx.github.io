@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://peicx.github.io">
-  <title>kali学习笔记--我遇到的那些坑 | 小蜗牛</title>
+  <title>ES安装问题集锦 | 小蜗牛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我第一次安装完kali后，在百度上看到一篇文章《安装完kali需要做的20件事》。接下来我按照文章的指示，遇到了一些坑。 由于源错误造成的一系列问题 输入法安装后无法调用出来；安装QQ失败；安装virtualbox和vmware虚拟机失败；  当时我一度找不出问题出在哪里，甚至开始怀疑人生，难道是这系统有问题？按照我以前的尿性估计又该重装了。其实我一直坚信  存在即合理  事物的存在一定有他的合理">
-<meta name="keywords" content="Kali">
+  <meta name="description" content="配置network.host: 0.0.0.0后，外网仍然无法访问这个问题折腾我好几天，更让人绝望的是，网上的解决方案竟然统统不管用。最后突然灵光一闪，会不会是防火墙阻止了？然后我设置在防火墙那里设置端口9200开启，外网就可以访问了。 12345678910111213141516--centos 7.0firewall-cmd --zone=public --add-port=8080/tcp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="kali学习笔记--我遇到的那些坑">
-<meta property="og:url" content="http://peicx.github.io/2016/08/14/kali学习笔记-我遇到的那些坑/index.html">
+<meta property="og:title" content="ES安装问题集锦">
+<meta property="og:url" content="http://peicx.github.io/2017/08/10/ES安装问题集锦/index.html">
 <meta property="og:site_name" content="小蜗牛">
-<meta property="og:description" content="我第一次安装完kali后，在百度上看到一篇文章《安装完kali需要做的20件事》。接下来我按照文章的指示，遇到了一些坑。 由于源错误造成的一系列问题 输入法安装后无法调用出来；安装QQ失败；安装virtualbox和vmware虚拟机失败；  当时我一度找不出问题出在哪里，甚至开始怀疑人生，难道是这系统有问题？按照我以前的尿性估计又该重装了。其实我一直坚信  存在即合理  事物的存在一定有他的合理">
+<meta property="og:description" content="配置network.host: 0.0.0.0后，外网仍然无法访问这个问题折腾我好几天，更让人绝望的是，网上的解决方案竟然统统不管用。最后突然灵光一闪，会不会是防火墙阻止了？然后我设置在防火墙那里设置端口9200开启，外网就可以访问了。 12345678910111213141516--centos 7.0firewall-cmd --zone=public --add-port=8080/tcp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-08-14T13:26:51.733Z">
+<meta property="og:updated_time" content="2018-03-12T13:13:44.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="kali学习笔记--我遇到的那些坑">
-<meta name="twitter:description" content="我第一次安装完kali后，在百度上看到一篇文章《安装完kali需要做的20件事》。接下来我按照文章的指示，遇到了一些坑。 由于源错误造成的一系列问题 输入法安装后无法调用出来；安装QQ失败；安装virtualbox和vmware虚拟机失败；  当时我一度找不出问题出在哪里，甚至开始怀疑人生，难道是这系统有问题？按照我以前的尿性估计又该重装了。其实我一直坚信  存在即合理  事物的存在一定有他的合理">
+<meta name="twitter:title" content="ES安装问题集锦">
+<meta name="twitter:description" content="配置network.host: 0.0.0.0后，外网仍然无法访问这个问题折腾我好几天，更让人绝望的是，网上的解决方案竟然统统不管用。最后突然灵光一闪，会不会是防火墙阻止了？然后我设置在防火墙那里设置端口9200开启，外网就可以访问了。 12345678910111213141516--centos 7.0firewall-cmd --zone=public --add-port=8080/tcp">
   
     <link rel="alternative" href="/atom.xml" title="小蜗牛" type="application/atom+xml">
   
@@ -155,53 +154,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-kali学习笔记-我遇到的那些坑" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ES安装问题集锦" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      kali学习笔记--我遇到的那些坑
+      ES安装问题集锦
     </h1>
   
 
         
-        <a href="/2016/08/14/kali学习笔记-我遇到的那些坑/" class="archive-article-date">
-  	<time datetime="2016-08-14T12:22:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-14</time>
+        <a href="/2017/08/10/ES安装问题集锦/" class="archive-article-date">
+  	<time datetime="2017-08-10T12:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我第一次安装完kali后，在百度上看到一篇文章《安装完kali需要做的20件事》。接下来我按照文章的指示，遇到了一些坑。</p>
-<h2 id="由于源错误造成的一系列问题"><a href="#由于源错误造成的一系列问题" class="headerlink" title="由于源错误造成的一系列问题"></a>由于源错误造成的一系列问题</h2><blockquote>
-<p>输入法安装后无法调用出来；<br>安装QQ失败；<br>安装virtualbox和vmware虚拟机失败；</p>
-</blockquote>
-<p>当时我一度找不出问题出在哪里，甚至开始怀疑人生，难道是这系统有问题？按照我以前的尿性估计又该重装了。其实我一直坚信</p>
-<blockquote>
-<p>存在即合理</p>
-</blockquote>
-<p>事物的存在一定有他的合理性，一定我有哪一点做错了。</p>
-<p>果然我发现我问题出在我看的第一个教程上了，教程《安装完kali需要做的20件事》第一件事让我换成国内的快速源，教程本无错，但是教程里的是针对以前kali的源，所以我在这个版本换上错误的源，官方把2.0的kali命名为sana，不同版本的系统的源不同。其实不知如此百度上还有很多教程也很老旧，我估计还会有很多新手重新犯我这种错误。</p>
-<h2 id="虚拟机安装成功后缺少header"><a href="#虚拟机安装成功后缺少header" class="headerlink" title="虚拟机安装成功后缺少header"></a>虚拟机安装成功后缺少header</h2><p>安装完vmware后，发现打开提示缺少linux-header，按照网上教程</p>
-<pre><code>apt-get install linux-headers-$(uname -r)
-</code></pre><p> 提示 </p>
-<pre><code>无法定位软件包 linux-headers-4.0.0-kali1-amd64
-无法按照正则表达式 linux-headers-4.0.0-kali1-amd64 找到任何软件包
-</code></pre><p> 按照网上的更换源的方法，更新后问题依然存在。说实话，这个是我见过最恶心的坑，找了好久教程，试了无数方法都没解决。最后要疯的时候找到了解决方法，方法如下：</p>
-<ol>
-<li>下载inux-kbuild,链接:(<a href="http://http.kali.org/kali/pool/main/l/linux-tools/" target="_blank" rel="noopener">http://http.kali.org/kali/pool/main/l/linux-tools/</a>) 具体版本参见自己的主机；</li>
-<li>编译linux-kbuild; dkpg -i linux-kbuild-4.3_4.3.1-2kali1_amd64.deb</li>
-<li>下载linux-header-common和主机版本对应的linux-header。链接 （<a href="http://http.kali.org/kali/pool/main/l/linux/）" target="_blank" rel="noopener">http://http.kali.org/kali/pool/main/l/linux/）</a> ,具体版本参见自己的主机 首先编译linux-header-common</li>
-<li>dkpg -i linux-headers-4.3.0-kali1-common_4.3.3-5kali4_amd64.deb<br>最后编译linux-header dkpg -i linux-headers-4.3.0-kali1-amd64_4.3.3-5kali4_amd64.deb 搞定。</li>
-</ol>
-<p>PS：如果编译过程中遇到缺少什么依赖，就去上面网站中下载缺少的依赖既可解决问题。</p>
-<h2 id="安装QQ遇到的问题"><a href="#安装QQ遇到的问题" class="headerlink" title="安装QQ遇到的问题"></a>安装QQ遇到的问题</h2><p>网上的教程安装QQ会推荐大家安装wine后再安装一个 ia32-libs  的32位支持，经过我失败几次和阅读更多的博客后，发现实际上这个ia32-libs早就废除了，大家以后找教程不要再百度找了，真是害人呀，搜到的教程排的靠前的全是又老有旧的，现在技术变化这么快，很多教程早就失效了。推荐大家找尽量到一个相关的论坛去找教程，这样的教程比较新。</p>
-<p>解决方法：用虚拟机里的QQ，说真的，经过一番设置后，虚拟机里的QQ还是非常好用的。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>首先，我觉得之所以碰到了这么多坑是因为参考的教程过于老旧，而新技术变化过快。我觉得以后找教程尽量去论坛或者其他活跃度比较高的社区去找，没有论坛或者社区的情况下尽量留意搜索引擎给的教程的日期，和版本，不同的话完全可以不去参考。</p>
-<p>以上为个人见解，如果有错误或者观点您觉得不对，欢迎指出，共同进步嘛。</p>
+        <h3 id="配置network-host-0-0-0-0后，外网仍然无法访问"><a href="#配置network-host-0-0-0-0后，外网仍然无法访问" class="headerlink" title="配置network.host: 0.0.0.0后，外网仍然无法访问"></a>配置network.host: 0.0.0.0后，外网仍然无法访问</h3><p>这个问题折腾我好几天，更让人绝望的是，网上的解决方案竟然统统不管用。最后突然灵光一闪，会不会是防火墙阻止了？然后我设置在防火墙那里设置端口9200开启，外网就可以访问了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">--centos 7.0</div><div class="line">firewall-cmd --zone=public --add-port=8080/tcp --peranment</div><div class="line">firewall-cmd --zone=public --add-port=8081/tcp --peranment</div><div class="line"></div><div class="line">--关闭防火墙</div><div class="line">service firewalld stop</div><div class="line"></div><div class="line"></div><div class="line">--centos 6.5</div><div class="line">/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</div><div class="line">/sbin/iptables -I INPUT -p tcp --dport 8081 -j ACCEPT</div><div class="line">/etc/rc.d/init.d/iptables save</div><div class="line">/etc/init.d/iptables restart</div><div class="line"></div><div class="line">--关闭防火墙</div><div class="line">/etc/init.d/iptables stop</div></pre></td></tr></table></figure>
+<p>环境Centos 6，直接运行没问题，改成外网访问时就报了四个错。注意修改完系统配置后，要重启才有效。另外yml配置中，开头要有一个空格，要不然有时候莫名其妙报错，玄学的很。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 配置前面要有一个空格，玄学</div><div class="line"> http.cors.enabled: true</div><div class="line"> http.cors.allow-origin: &quot;*&quot;</div></pre></td></tr></table></figure>
+<h3 id="system-call-filters-failed-to-install-check-the-logs-and-fix-your-configuration-or-disable-system-call-filters-at-your-own-risk"><a href="#system-call-filters-failed-to-install-check-the-logs-and-fix-your-configuration-or-disable-system-call-filters-at-your-own-risk" class="headerlink" title="system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk"></a>system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk</h3><p>原因：<br>这是在因为Centos6不支持SecComp，而ES5.2.0默认bootstrap.system_call_filter为true进行检测，所以导致检测失败，失败后直接导致ES不能启动。</p>
+<p>解决：<br>在elasticsearch.yml中配置bootstrap.system_call_filter为false，注意要在Memory下面:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bootstrap.memory_lock: false</div><div class="line">bootstrap.system_call_filter: false</div></pre></td></tr></table></figure>
+<h3 id="max-number-of-threads-1024-for-user-lish-likely-too-low-increase-to-at-least-2048"><a href="#max-number-of-threads-1024-for-user-lish-likely-too-low-increase-to-at-least-2048" class="headerlink" title="max number of threads [1024] for user [lish] likely too low, increase to at least [2048]"></a>max number of threads [1024] for user [lish] likely too low, increase to at least [2048]</h3><p>解决：切换到root用户，进入limits.d目录下修改配置文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">vi /etc/security/limits.d/90-nproc.conf </div><div class="line"></div><div class="line">修改如下内容：</div><div class="line"></div><div class="line">* soft nproc 1024</div><div class="line"></div><div class="line">#修改为</div><div class="line"></div><div class="line">* soft nproc 2048</div></pre></td></tr></table></figure>
+<h3 id="max-file-descriptors过小"><a href="#max-file-descriptors过小" class="headerlink" title="max file descriptors过小"></a>max file descriptors过小</h3><p>错误“max file descriptors [65535] for elasticsearchprocess is too low, increase to at least [65536]”，maxfile descriptors为最大文件描述符，设置其大于65536即可。解决方法是修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi /etc/security/limits.conf文件，添加</div><div class="line">* - nofile 65536 </div><div class="line">* - memlock unlimited</div></pre></td></tr></table></figure>
+<h3 id="max-map-count过小"><a href="#max-map-count过小" class="headerlink" title="max_map_count过小"></a>max_map_count过小</h3><p>错误“max virtual memory areas vm.max_map_count [65530]is too low, increase to at least [262144]”，max_map_count文件包含限制一个进程可以拥有的VMA(虚拟内存区域)的数量，系统默认是65530，修改成262144。解决方法是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi /etc/sysctl.conf</div><div class="line">添加</div><div class="line">vm.max_map_count=262144</div></pre></td></tr></table></figure>
 
       
 
@@ -210,29 +195,7 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Kali</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Info-security//" class="article-tag-list-link color5">信息安全</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -282,7 +245,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://peicx.github.io/2016/08/14/kali学习笔记-我遇到的那些坑/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://peicx.github.io/2017/08/10/ES安装问题集锦/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -296,18 +259,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/10/ES安装问题集锦/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/18/微信跳一跳辅助/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ES安装问题集锦
+          微信跳一跳辅助
         
       </div>
     </a>
   
   
-    <a href="/2016/08/11/搜索引擎技巧-语法查询/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">搜索引擎技巧--语法查询</div>
+    <a href="/2016/08/14/kali学习笔记-我遇到的那些坑/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">kali学习笔记--我遇到的那些坑</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -334,7 +297,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#由于源错误造成的一系列问题"><span class="toc-number">1.</span> <span class="toc-text">由于源错误造成的一系列问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟机安装成功后缺少header"><span class="toc-number">2.</span> <span class="toc-text">虚拟机安装成功后缺少header</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装QQ遇到的问题"><span class="toc-number">3.</span> <span class="toc-text">安装QQ遇到的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置network-host-0-0-0-0后，外网仍然无法访问"><span class="toc-number">1.</span> <span class="toc-text">配置network.host: 0.0.0.0后，外网仍然无法访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#system-call-filters-failed-to-install-check-the-logs-and-fix-your-configuration-or-disable-system-call-filters-at-your-own-risk"><span class="toc-number">2.</span> <span class="toc-text">system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-number-of-threads-1024-for-user-lish-likely-too-low-increase-to-at-least-2048"><span class="toc-number">3.</span> <span class="toc-text">max number of threads [1024] for user [lish] likely too low, increase to at least [2048]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-file-descriptors过小"><span class="toc-number">4.</span> <span class="toc-text">max file descriptors过小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-map-count过小"><span class="toc-number">5.</span> <span class="toc-text">max_map_count过小</span></a></li></ol>
                     </div>
                 </span>
             </div>

@@ -228,6 +228,146 @@
 
 
   
+    <article id="post-微信跳一跳辅助" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/18/微信跳一跳辅助/">微信跳一跳辅助</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/18/微信跳一跳辅助/" class="archive-article-date">
+  	<time datetime="2018-01-18T01:22:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">import PIL, numpy, os</div><div class="line"># 这个模块便于绑定鼠标事件，记录鼠标点击位置</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">def get_screen_image():</div><div class="line">    # 电脑控制手机截屏</div><div class="line">    os.system(&apos;adb shell screencap -p /sdcard/screen.png&apos;)</div><div class="line">    # 把截图复制到电脑</div><div class="line">    os.system(&apos;adb pull /sdcard/screen.png&apos;)</div><div class="line">    return numpy.array(PIL.Image.open(&apos;screen.png&apos;))</div><div class="line"></div><div class="line">def jump_to_next(point1, point2):</div><div class="line">    x1, y1 = point1; x2, y2 = point2</div><div class="line">    distance = ((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2))**0.5</div><div class="line">    duration = distance/522.8*723.0</div><div class="line">    # 控制手机触屏时间</div><div class="line">    os.system(&apos;adb shell input swipe 100 100 100 100 &apos; + str(int(round(duration))))</div><div class="line"></div><div class="line"></div><div class="line">def on_calck(event, coor=[]):</div><div class="line">    # 记录两个触屏坐标</div><div class="line">    coor.append((event.xdata, event.ydata))</div><div class="line">    if len(coor) == 2:</div><div class="line">        jump_to_next(coor.pop(), coor.pop())</div><div class="line"></div><div class="line">figure = plt.figure()</div><div class="line">while(True):</div><div class="line">    axes_image = plt.imshow(get_screen_image(), animated=True)</div><div class="line">    # 为鼠标点击设置回调函数</div><div class="line">    figure.canvas.mpl_connect(&apos;button_press_event&apos;, on_calck)</div><div class="line">    # 暂停刷新图像，使用show就不得不关闭再打开实现刷新</div><div class="line">    plt.pause(0.9)</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/18/微信跳一跳辅助/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES安装问题集锦" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/10/ES安装问题集锦/">ES安装问题集锦</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/10/ES安装问题集锦/" class="archive-article-date">
+  	<time datetime="2017-08-10T12:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="配置network-host-0-0-0-0后，外网仍然无法访问"><a href="#配置network-host-0-0-0-0后，外网仍然无法访问" class="headerlink" title="配置network.host: 0.0.0.0后，外网仍然无法访问"></a>配置network.host: 0.0.0.0后，外网仍然无法访问</h3><p>这个问题折腾我好几天，更让人绝望的是，网上的解决方案竟然统统不管用。最后突然灵光一闪，会不会是防火墙阻止了？然后我设置在防火墙那里设置端口9200开启，外网就可以访问了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">--centos 7.0</div><div class="line">firewall-cmd --zone=public --add-port=8080/tcp --peranment</div><div class="line">firewall-cmd --zone=public --add-port=8081/tcp --peranment</div><div class="line"></div><div class="line">--关闭防火墙</div><div class="line">service firewalld stop</div><div class="line"></div><div class="line"></div><div class="line">--centos 6.5</div><div class="line">/sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</div><div class="line">/sbin/iptables -I INPUT -p tcp --dport 8081 -j ACCEPT</div><div class="line">/etc/rc.d/init.d/iptables save</div><div class="line">/etc/init.d/iptables restart</div><div class="line"></div><div class="line">--关闭防火墙</div><div class="line">/etc/init.d/iptables stop</div></pre></td></tr></table></figure>
+<p>环境Centos 6，直接运行没问题，改成外网访问时就报了四个错。注意修改完系统配置后，要重启才有效。另外yml配置中，开头要有一个空格，要不然有时候莫名其妙报错，玄学的很。如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 配置前面要有一个空格，玄学</div><div class="line"> http.cors.enabled: true</div><div class="line"> http.cors.allow-origin: &quot;*&quot;</div></pre></td></tr></table></figure>
+<h3 id="system-call-filters-failed-to-install-check-the-logs-and-fix-your-configuration-or-disable-system-call-filters-at-your-own-risk"><a href="#system-call-filters-failed-to-install-check-the-logs-and-fix-your-configuration-or-disable-system-call-filters-at-your-own-risk" class="headerlink" title="system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk"></a>system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk</h3><p>原因：<br>这是在因为Centos6不支持SecComp，而ES5.2.0默认bootstrap.system_call_filter为true进行检测，所以导致检测失败，失败后直接导致ES不能启动。</p>
+<p>解决：<br>在elasticsearch.yml中配置bootstrap.system_call_filter为false，注意要在Memory下面:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bootstrap.memory_lock: false</div><div class="line">bootstrap.system_call_filter: false</div></pre></td></tr></table></figure>
+<h3 id="max-number-of-threads-1024-for-user-lish-likely-too-low-increase-to-at-least-2048"><a href="#max-number-of-threads-1024-for-user-lish-likely-too-low-increase-to-at-least-2048" class="headerlink" title="max number of threads [1024] for user [lish] likely too low, increase to at least [2048]"></a>max number of threads [1024] for user [lish] likely too low, increase to at least [2048]</h3><p>解决：切换到root用户，进入limits.d目录下修改配置文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">vi /etc/security/limits.d/90-nproc.conf </div><div class="line"></div><div class="line">修改如下内容：</div><div class="line"></div><div class="line">* soft nproc 1024</div><div class="line"></div><div class="line">#修改为</div><div class="line"></div><div class="line">* soft nproc 2048</div></pre></td></tr></table></figure>
+<h3 id="max-file-descriptors过小"><a href="#max-file-descriptors过小" class="headerlink" title="max file descriptors过小"></a>max file descriptors过小</h3><p>错误“max file descriptors [65535] for elasticsearchprocess is too low, increase to at least [65536]”，maxfile descriptors为最大文件描述符，设置其大于65536即可。解决方法是修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi /etc/security/limits.conf文件，添加</div><div class="line">* - nofile 65536 </div><div class="line">* - memlock unlimited</div></pre></td></tr></table></figure>
+<h3 id="max-map-count过小"><a href="#max-map-count过小" class="headerlink" title="max_map_count过小"></a>max_map_count过小</h3><p>错误“max virtual memory areas vm.max_map_count [65530]is too low, increase to at least [262144]”，max_map_count文件包含限制一个进程可以拥有的VMA(虚拟内存区域)的数量，系统默认是65530，修改成262144。解决方法是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vi /etc/sysctl.conf</div><div class="line">添加</div><div class="line">vm.max_map_count=262144</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/10/ES安装问题集锦/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-kali学习笔记-我遇到的那些坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -725,7 +865,7 @@
       
         <hr>
 <p>我逝去的大一。</p>
-<p><strong>我的大一还算是很幸运的</strong>。<br>大一我有幸能跟着信息化办的老师学习，在此期间学到一些centos基础，同时开阔了视野，见识了很多。由于有数据结构的基础，下学期有幸跟着一哥去学hybird 开发，同时有机会接触到道灵哥和一山哥。在他们带领下，我逐渐学习了js，Angular Js  Node.js,MDL,Github。这些让我感到很幸运。</p>
+<p><strong>我的大一还算是很幸运的</strong>。<br>大一我有幸能跟着信息化办的老师学习，在此期间学到一些Centos基础，同时开阔了视野，见识了很多。由于有数据结构的基础，下学期有幸跟着一哥去学hybird 开发，同时有机会接触到道灵哥和一山哥。在他们带领下，我逐渐学习了js，Angular Js  Node.js，MDL，Github。这些让我感到很幸运。</p>
 <p><strong>同时，我的大一还算是比较失败的</strong>。</p>
 <p>为什么这么说，跟着一哥学了一阵子后，不知怎么地我就非常膨胀了，自信心爆棚，这种状态持续了很久。我逐渐意识到我觉得我对自己的判断有了很大偏差。觉得知乎上有人说的非常对，引用下，与大家共勉。</p>
 <blockquote>
