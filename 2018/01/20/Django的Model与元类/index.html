@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://peicx.github.io">
-  <title>微信跳一跳辅助 | 小蜗牛</title>
+  <title>Django的Model与元类 | 小蜗牛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
+  <meta name="description" content="背景平时我使用一个陌生的函数或者类的时候，都有一种习惯，那就是按ctrl键到这个类或函数的定义处，看看定义的详情，传入的参数之类的。直到有一天，我对Django的Model的objects定义很感兴趣，于是跟踪进去，发现，并没有找到objects的定义，这就奇怪了？ class Model(metaclass=ModelBase):     def __init__(self, *args, **">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信跳一跳辅助">
-<meta property="og:url" content="http://peicx.github.io/2018/01/18/微信跳一跳辅助/index.html">
+<meta property="og:title" content="Django的Model与元类">
+<meta property="og:url" content="http://peicx.github.io/2018/01/20/Django的Model与元类/index.html">
 <meta property="og:site_name" content="小蜗牛">
-<meta property="og:description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
+<meta property="og:description" content="背景平时我使用一个陌生的函数或者类的时候，都有一种习惯，那就是按ctrl键到这个类或函数的定义处，看看定义的详情，传入的参数之类的。直到有一天，我对Django的Model的objects定义很感兴趣，于是跟踪进去，发现，并没有找到objects的定义，这就奇怪了？ class Model(metaclass=ModelBase):     def __init__(self, *args, **">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T13:27:01.627Z">
+<meta property="og:updated_time" content="2018-03-20T10:03:12.299Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信跳一跳辅助">
-<meta name="twitter:description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
+<meta name="twitter:title" content="Django的Model与元类">
+<meta name="twitter:description" content="背景平时我使用一个陌生的函数或者类的时候，都有一种习惯，那就是按ctrl键到这个类或函数的定义处，看看定义的详情，传入的参数之类的。直到有一天，我对Django的Model的objects定义很感兴趣，于是跟踪进去，发现，并没有找到objects的定义，这就奇怪了？ class Model(metaclass=ModelBase):     def __init__(self, *args, **">
   
     <link rel="alternative" href="/atom.xml" title="小蜗牛" type="application/atom+xml">
   
@@ -154,29 +154,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-微信跳一跳辅助" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Django的Model与元类" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      微信跳一跳辅助
+      Django的Model与元类
     </h1>
   
 
         
-        <a href="/2018/01/18/微信跳一跳辅助/" class="archive-article-date">
-  	<time datetime="2018-01-18T01:22:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
+        <a href="/2018/01/20/Django的Model与元类/" class="archive-article-date">
+  	<time datetime="2018-01-20T09:32:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。</p>
-<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">import PIL, numpy, os</div><div class="line"># 这个模块便于绑定鼠标事件，记录鼠标点击位置</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">def get_screen_image():</div><div class="line">    # 电脑控制手机截屏</div><div class="line">    os.system(&apos;adb shell screencap -p /sdcard/screen.png&apos;)</div><div class="line">    # 把截图复制到电脑</div><div class="line">    os.system(&apos;adb pull /sdcard/screen.png&apos;)</div><div class="line">    return numpy.array(PIL.Image.open(&apos;screen.png&apos;))</div><div class="line"></div><div class="line">def jump_to_next(point1, point2):</div><div class="line">    x1, y1 = point1; x2, y2 = point2</div><div class="line">    distance = ((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2))**0.5</div><div class="line">    duration = distance/522.8*723.0</div><div class="line">    # 控制手机触屏时间</div><div class="line">    os.system(&apos;adb shell input swipe 100 100 100 100 &apos; + str(int(round(duration))))</div><div class="line"></div><div class="line"></div><div class="line">def on_calck(event, coor=[]):</div><div class="line">    # 记录两个触屏坐标</div><div class="line">    coor.append((event.xdata, event.ydata))</div><div class="line">    if len(coor) == 2:</div><div class="line">        jump_to_next(coor.pop(), coor.pop())</div><div class="line"></div><div class="line">figure = plt.figure()</div><div class="line">while(True):</div><div class="line">    axes_image = plt.imshow(get_screen_image(), animated=True)</div><div class="line">    # 为鼠标点击设置回调函数</div><div class="line">    figure.canvas.mpl_connect(&apos;button_press_event&apos;, on_calck)</div><div class="line">    # 暂停刷新图像，使用show就不得不关闭再打开实现刷新</div><div class="line">    plt.pause(0.9)</div></pre></td></tr></table></figure>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>平时我使用一个陌生的函数或者类的时候，都有一种习惯，那就是按ctrl键到这个类或函数的定义处，看看定义的详情，传入的参数之类的。直到有一天，我对Django的Model的objects定义很感兴趣，于是跟踪进去，发现，并没有找到objects的定义，这就奇怪了？</p>
+<pre><code>class Model(metaclass=ModelBase):
+    def __init__(self, *args, **kwargs):
+        # Alias some things as locals to avoid repeat global lookups
+        cls = self.__class__
+    opts = self._meta
+    _setattr = setattr
+    _DEFERRED = DEFERRED
+</code></pre><p>只看到如上的定义。还有个问题就是，Django的Model写的时候，所有属性虽然是直接写在类里的，而不是写在<strong>init</strong>中，这意味定义时写的都是类属性？每次实例化时，每个对象只代表数据表中的一行，所有不应该定义为类属性的，但是Django的Model就是这么定义的，这个疑问困扰我好长时间，网上查也没查到，直到有一天看到metaclass时，才恍然大悟。</p>
+<h3 id="Metaclass"><a href="#Metaclass" class="headerlink" title="Metaclass"></a>Metaclass</h3><p>以前学习的时候学过元类和type，但是大概因为从来没有用过吧，忘的一干二净。</p>
+<p>metaclass，我理解的就是可以动态的创建类，元类的实例化是类，类的实例化是对象。ORM就是一个典型的例子。</p>
+<p>那为什么直接定义为类的属性呢？</p>
+<p>因为Model实际是通过Metaclass生成的，它在动态生成ORM时，就从类属性提取所有类属性到一个<strong>mapping</strong>中，然后删除所有的类属性，这也就意味着动态生成的新类实际还是 对象的属性，而不是类属性。</p>
+<p>提取到mapping中的属性方便了动态生成类，同时类的所有方法，比如动态生成的数据库插入函数 就可以拥有所有动态定义的字段了。</p>
 
       
 
@@ -235,7 +246,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://peicx.github.io/2018/01/18/微信跳一跳辅助/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://peicx.github.io/2018/01/20/Django的Model与元类/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -249,18 +260,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/20/Django的Model与元类/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/09/Django权限验证代码的理解/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Django的Model与元类
+          Django权限验证代码的理解
         
       </div>
     </a>
   
   
-    <a href="/2017/08/10/ES安装问题集锦/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ES安装问题集锦</div>
+    <a href="/2018/01/18/微信跳一跳辅助/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信跳一跳辅助</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -287,7 +298,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Metaclass"><span class="toc-number">2.</span> <span class="toc-text">Metaclass</span></a></li></ol>
                     </div>
                 </span>
             </div>

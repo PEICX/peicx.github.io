@@ -152,6 +152,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-lxml-Event-driven-parsing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/28/lxml-Event-driven-parsing/">lxml Event-driven parsing</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/28/lxml-Event-driven-parsing/" class="archive-article-date">
+  	<time datetime="2018-03-28T13:41:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>以前我一直使用Beautiful Soup，又或者一些框架里的Xpath来解析HTML，今天在偶然间接触到 lxml，被他的事件驱动解析吸引，有种相见恨晚的感觉，用起来非常的爽。</p>
+<p>HTML解析库有很多，比如HTMLParser也是事件驱动，但是它的文档容错能力弱，html5lib解析起来速度慢，lxml速度还行，容错能力也强。</p>
+<h3 id="Event-driven-paring"><a href="#Event-driven-paring" class="headerlink" title="Event-driven paring"></a>Event-driven paring</h3><p>lxml.etree有两种事件驱动的解析起接口，一个在构建树（iterparse）时生成解析器事件，另一个不根据树构建树，而是用SAX-like风格调用一个目标对象的回调方法。SAX是Simple API for XML？</p>
+<h3 id="使用目标解析器方法"><a href="#使用目标解析器方法" class="headerlink" title="使用目标解析器方法"></a>使用目标解析器方法</h3><p>目标解析器是可以实现以下方法的类：</p>
+<ol>
+<li>start 访问标签的起始部分时触发，如打开<a href="#">；</a></li>
+<li>end 访问标签的闭合部分时触发，如 </li>
+<li>data 触发文本子节点并访问该文本</li>
+<li>close 在解析完成后触发</li>
+</ol>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><pre><code>class HtmlParser():
+    def __init__(self, response):
+        self._parse(response)
+        print(response.content)
+
+    def start(self, tag, attrs):
+        print(&quot;start-----------------------&quot;)
+        print(tag)
+
+    def end(self, tag):
+        print(&quot;end-------------------------&quot;)
+        print(tag)
+
+    def close(self):
+        print(&quot;called close&quot;)
+
+    def _parse(self, response):
+        parser = etree.HTMLParser(target=self, recover=True)
+        try:
+            etree.fromstring(response.content, parser)
+        except ValueError:
+            pass
+
+import requests
+
+web = requests.get(&quot;https://www.baidu.com&quot;)
+a = HtmlParser(web)
+pass
+</code></pre><p>上面这个类，实例化时会根据网页中的标签依次触发，你可以在触发的函数里面写好处理，比如表单的填充。用起来非常爽</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/28/lxml-Event-driven-parsing/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Django权限验证代码的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -199,6 +300,82 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/03/09/Django权限验证代码的理解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Django的Model与元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/20/Django的Model与元类/">Django的Model与元类</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/20/Django的Model与元类/" class="archive-article-date">
+  	<time datetime="2018-01-20T09:32:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>平时我使用一个陌生的函数或者类的时候，都有一种习惯，那就是按ctrl键到这个类或函数的定义处，看看定义的详情，传入的参数之类的。直到有一天，我对Django的Model的objects定义很感兴趣，于是跟踪进去，发现，并没有找到objects的定义，这就奇怪了？</p>
+<pre><code>class Model(metaclass=ModelBase):
+    def __init__(self, *args, **kwargs):
+        # Alias some things as locals to avoid repeat global lookups
+        cls = self.__class__
+    opts = self._meta
+    _setattr = setattr
+    _DEFERRED = DEFERRED
+</code></pre><p>只看到如上的定义。还有个问题就是，Django的Model写的时候，所有属性虽然是直接写在类里的，而不是写在<strong>init</strong>中，这意味定义时写的都是类属性？每次实例化时，每个对象只代表数据表中的一行，所有不应该定义为类属性的，但是Django的Model就是这么定义的，这个疑问困扰我好长时间，网上查也没查到，直到有一天看到metaclass时，才恍然大悟。</p>
+<h3 id="Metaclass"><a href="#Metaclass" class="headerlink" title="Metaclass"></a>Metaclass</h3><p>以前学习的时候学过元类和type，但是大概因为从来没有用过吧，忘的一干二净。</p>
+<p>metaclass，我理解的就是可以动态的创建类，元类的实例化是类，类的实例化是对象。ORM就是一个典型的例子。</p>
+<p>那为什么直接定义为类的属性呢？</p>
+<p>因为Model实际是通过Metaclass生成的，它在动态生成ORM时，就从类属性提取所有类属性到一个<strong>mapping</strong>中，然后删除所有的类属性，这也就意味着动态生成的新类实际还是 对象的属性，而不是类属性。</p>
+<p>提取到mapping中的属性方便了动态生成类，同时类的所有方法，比如动态生成的数据库插入函数 就可以拥有所有动态定义的字段了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/20/Django的Model与元类/">展开全文 >></a>
         </p>
       
 
@@ -843,210 +1020,10 @@
 
 
   
-    <article id="post-大一过完了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/10/大一过完了/">大一过完了</a>
-    </h1>
-  
-
-        
-        <a href="/2016/07/10/大一过完了/" class="archive-article-date">
-  	<time datetime="2016-07-10T03:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>我逝去的大一。</p>
-<p><strong>我的大一还算是很幸运的</strong>。<br>大一我有幸能跟着信息化办的老师学习，在此期间学到一些Centos基础，同时开阔了视野，见识了很多。由于有数据结构的基础，下学期有幸跟着一哥去学hybird 开发，同时有机会接触到道灵哥和一山哥。在他们带领下，我逐渐学习了js，Angular Js  Node.js，MDL，Github。这些让我感到很幸运。</p>
-<p><strong>同时，我的大一还算是比较失败的</strong>。</p>
-<p>为什么这么说，跟着一哥学了一阵子后，不知怎么地我就非常膨胀了，自信心爆棚，这种状态持续了很久。我逐渐意识到我觉得我对自己的判断有了很大偏差。觉得知乎上有人说的非常对，引用下，与大家共勉。</p>
-<blockquote>
-<p>前端的新技术，不是门坎较低、就是给人一种容易掌握的错觉。Less/Sass 不谈，<br>你学了 Angular，懂得 data-binding、router 等背后的实现原理吗？<br>你虽会用 Node 搭建一个本地 server，但懂得 I/O 流程、HTTP 和操作系统知识吗？<br>你能不诉诸书本和搜索引擎，写出几个 JS 设计模式和继承模式吗？<br>你能完全脱离 jQuery 来操纵 DOM 和 Ajax 吗？<br>你知道怎么写 CSS 选择器能让浏览器解释速度最快吗？<br>你会在开发过程中，下意识地追求 HTTP 请求最少吗？……</p>
-</blockquote>
-<p>显然我不能。</p>
-<p>我真的需要重新审视自己。</p>
-<p>被一时的自我成就和满足所障目，而忘却了技术最重要的永远是基础。</p>
-<p>与大家共勉！！！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/life//" class="article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/10/大一过完了/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-时间管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/09/时间管理/">时间管理</a>
-    </h1>
-  
-
-        
-        <a href="/2016/07/09/时间管理/" class="archive-article-date">
-  	<time datetime="2016-07-09T11:38:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>今天读了《时间管理》这本书，顺便写下一些心得，算是方便以后回顾和督促自己完成吧。</p>
-<h3 id="一-自我意识是先决条件。"><a href="#一-自我意识是先决条件。" class="headerlink" title="一.自我意识是先决条件。"></a><strong>一.自我意识是先决条件。</strong></h3><p>为什么这么说呢？因为只有当你真正意识到你是如何支配时间的，你才有可能去管理你的时间。（共勉！！！）</p>
-<h3 id="二-目标设定是第一步。"><a href="#二-目标设定是第一步。" class="headerlink" title="二.目标设定是第一步。"></a><strong>二.目标设定是第一步。</strong></h3><p>目标很重要，但确定目标是为了更好的执行。</p>
-<h3 id="三-选择是艰难的。"><a href="#三-选择是艰难的。" class="headerlink" title="三.选择是艰难的。"></a><strong>三.选择是艰难的。</strong></h3><p>现在，你需要一个彻底的反省。你需要找到一个平衡点。你到底想要得过且过–做你现在马上想做的事呢–还是为未来着想–做那些能让你今后过上自己想要的生活的事情呢？</p>
-<p>我不打算站在这里告诉你：只要你努力奋斗，就可以得到任何你想要的东西。生活却偏偏不是这样。有很多因素和时间都超出了人们控制能力的范围，而这些将会对你的生活走向产生影响。</p>
-<p>但我可以告诉你的事：通过做出正确的选择，通过使自己保持一种想要成功的姿态，你可以获得更大的机会，去实现你想要达成的目标。</p>
-<p>时间管理在很大程度上讲的就是选择。既然你已经确立了高度的时间意识，并设定了一些目标，那么，你就需要面对竞争的需求所带来的压力了。朋友游戏邀请，晚睡的渴望，承诺和义务，互联网的诱惑，以及任何会对你造成干扰，影响你达到目标的事情。</p>
-<p>目标的设定只是确定一个大致的方向，人生往往一波三折，变幻无常，难以预测。尽管如此，通过不断地对自己的目标进行反思和适时的调整，你就更有可能让自己的生活沿着既定的日程向前进发–而不是随波逐流，听天由命。</p>
-<h3 id="四-你可以创造时间。"><a href="#四-你可以创造时间。" class="headerlink" title="四.你可以创造时间。"></a><strong>四.你可以创造时间。</strong></h3><p>   1）精力</p>
-<p>斯坦女士写过一个有名的警句：“玫瑰毕竟是玫瑰。”（A rose is a rose is a rose.) 她的观点是无论你把某种东西成为什么，这种东西的本质是不会改变的。歌特鲁斯 斯坦和鸭子与时间管理有关系吗？嗯，他们的出现只是为了引出我们需要讨论的另一个概念：在你追求有效的时间管理的过程中，并非所有的时间都是相同的。</p>
-<p>   2）寻找时间空隙</p>
-<blockquote>
-<p>要善于利用等待的时间</p>
-</blockquote>
-<p>   3）杂乱不堪是高效的大敌。</p>
-<blockquote>
-<p> 物应各有其所，亦应各在其所。</p>
-</blockquote>
-<h3 id="五-拖延是大敌。"><a href="#五-拖延是大敌。" class="headerlink" title="五.拖延是大敌。"></a><strong>五.拖延是大敌</strong>。</h3><h3 id="六-要有一颗“似水之心”。"><a href="#六-要有一颗“似水之心”。" class="headerlink" title="六.要有一颗“似水之心”。"></a><strong>六.要有一颗“似水之心”</strong>。</h3><h3 id="七-计划和准备是值得花精力去做的。"><a href="#七-计划和准备是值得花精力去做的。" class="headerlink" title="七.计划和准备是值得花精力去做的。"></a><strong>七.计划和准备是值得花精力去做的。</strong></h3><p>你应该每天至少花十分钟时间，来规划你这一天如何度过。如果你是一只夜猫子，那就在前一天晚上做好计划。<br>问自己一些类似这样的问题：</p>
-<blockquote>
-<p>今天我想要完成哪些工作？<br>    我有多少时间可以用来完成这些工作？<br>    这些工作的完成顺序。</p>
-</blockquote>
-<p>过分计划会让事情走向反面，有些人沉迷计划的过程。他们总是分析来分析去，因为分析比实际做决定更容易。有时，分析过程掩盖了对采取行动的恐惧。在某一时点，你必须采取行动。</p>
-<h3 id="八-通过确定优先顺序，你可以做到去芜存菁。"><a href="#八-通过确定优先顺序，你可以做到去芜存菁。" class="headerlink" title="八.通过确定优先顺序，你可以做到去芜存菁。"></a><strong>八.通过确定优先顺序，你可以做到去芜存菁。</strong></h3><p>《吃掉那只青蛙》书中指出：</p>
-<blockquote>
-<p>在你决定要做什么，并对其进行排序的时候，你首先要解决那些最难办的项目。</p>
-</blockquote>
-<p>吃青蛙的原则：如果你必须要吃掉两只青蛙，那么，你要先吃较丑的那一只。这也就是说，如果你面前有两项重要的任务要完成，那么，你要先从那个最大，最困难而且最重要的任务开始做起。要督促自己马上开始，然后一直坚持，直到任务完成，你再去做其他的事情</p>
-<h3 id="九-专心致志是问题的关键所在。"><a href="#九-专心致志是问题的关键所在。" class="headerlink" title="九.专心致志是问题的关键所在。"></a><strong>九.专心致志是问题的关键所在。</strong></h3><p>专注。。。。。。。专注。。。。。。。专注<br>排除让你分心的事情。</p>
-<blockquote>
-<p>“走路的时候，走路。吃饭的时候，吃饭。”–禅宗谚语</p>
-</blockquote>
-<p>注意不要用忙碌来取代效率。<br>费瑞斯指出：那些整天忙忙碌碌的人–忙完了一个活动又忙完另一个–事实上可能是以牺牲有效性为代价而维持其忙碌状态的。你的目标是富有成效–即你所做的事情必须能够让你更加接近你的目标。</p>
-<blockquote>
-<p> 二八定律：你的80%的成就来自你的20%的行为。</p>
-</blockquote>
-<p>怎么应用到生活中去呢？<br>考虑你做的事情中，那一件最有可能帮你达成这个目标？<br>那么在这件事情上，你应该投入最大的精力和注意力。</p>
-<p>只要有可能，要一次性或者在一个时间段内完成一项任务。</p>
-<blockquote>
-<p>帕金森法则说明：完成一项工作的时间会膨胀到你所拥有的时间的极限。如果你有3个小时去完成一个项目，那么，你将在3个小时内完成它。如果你有一个星期时间，那么它将会用去你一个星期，而且很有可能，你所完成的产品也不见得就比3个小时完成的产品更好。</p>
-</blockquote>
-<hr>
-<p>虽然时间管理对于一个人的成功来讲是一个关键的因素，但那并不意味着良好的时间管理者总是在忙于一个又一个活动，就这样度过一生。也存在这样的情况：有时，我会骑着自行车去一些地方闲逛，只是有因为我喜欢悠闲的单车之旅。吉姆 兰德尔如是说。</p>
-<hr>
-<p>参考资料：<br>[1] Jim Randel,舒建广译,2012.The Skinny on Time Management.上海交通大学出版社.1-215<br>[2] Brian Trancy,2009.Eat That Frog.化学工业出版社</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/life//" class="article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/09/时间管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 

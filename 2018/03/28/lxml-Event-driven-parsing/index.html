@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://peicx.github.io">
-  <title>微信跳一跳辅助 | 小蜗牛</title>
+  <title>lxml Event-driven parsing | 小蜗牛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
+  <meta name="description" content="前言以前我一直使用Beautiful Soup，又或者一些框架里的Xpath来解析HTML，今天在偶然间接触到 lxml，被他的事件驱动解析吸引，有种相见恨晚的感觉，用起来非常的爽。 HTML解析库有很多，比如HTMLParser也是事件驱动，但是它的文档容错能力弱，html5lib解析起来速度慢，lxml速度还行，容错能力也强。 Event-driven paringlxml.etree有两种事">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信跳一跳辅助">
-<meta property="og:url" content="http://peicx.github.io/2018/01/18/微信跳一跳辅助/index.html">
+<meta property="og:title" content="lxml Event-driven parsing">
+<meta property="og:url" content="http://peicx.github.io/2018/03/28/lxml-Event-driven-parsing/index.html">
 <meta property="og:site_name" content="小蜗牛">
-<meta property="og:description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
+<meta property="og:description" content="前言以前我一直使用Beautiful Soup，又或者一些框架里的Xpath来解析HTML，今天在偶然间接触到 lxml，被他的事件驱动解析吸引，有种相见恨晚的感觉，用起来非常的爽。 HTML解析库有很多，比如HTMLParser也是事件驱动，但是它的文档容错能力弱，html5lib解析起来速度慢，lxml速度还行，容错能力也强。 Event-driven paringlxml.etree有两种事">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T13:27:01.627Z">
+<meta property="og:updated_time" content="2018-03-28T13:59:03.249Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信跳一跳辅助">
-<meta name="twitter:description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
+<meta name="twitter:title" content="lxml Event-driven parsing">
+<meta name="twitter:description" content="前言以前我一直使用Beautiful Soup，又或者一些框架里的Xpath来解析HTML，今天在偶然间接触到 lxml，被他的事件驱动解析吸引，有种相见恨晚的感觉，用起来非常的爽。 HTML解析库有很多，比如HTMLParser也是事件驱动，但是它的文档容错能力弱，html5lib解析起来速度慢，lxml速度还行，容错能力也强。 Event-driven paringlxml.etree有两种事">
   
     <link rel="alternative" href="/atom.xml" title="小蜗牛" type="application/atom+xml">
   
@@ -154,29 +154,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-微信跳一跳辅助" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-lxml-Event-driven-parsing" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      微信跳一跳辅助
+      lxml Event-driven parsing
     </h1>
   
 
         
-        <a href="/2018/01/18/微信跳一跳辅助/" class="archive-article-date">
-  	<time datetime="2018-01-18T01:22:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
+        <a href="/2018/03/28/lxml-Event-driven-parsing/" class="archive-article-date">
+  	<time datetime="2018-03-28T13:41:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。</p>
-<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">import PIL, numpy, os</div><div class="line"># 这个模块便于绑定鼠标事件，记录鼠标点击位置</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">def get_screen_image():</div><div class="line">    # 电脑控制手机截屏</div><div class="line">    os.system(&apos;adb shell screencap -p /sdcard/screen.png&apos;)</div><div class="line">    # 把截图复制到电脑</div><div class="line">    os.system(&apos;adb pull /sdcard/screen.png&apos;)</div><div class="line">    return numpy.array(PIL.Image.open(&apos;screen.png&apos;))</div><div class="line"></div><div class="line">def jump_to_next(point1, point2):</div><div class="line">    x1, y1 = point1; x2, y2 = point2</div><div class="line">    distance = ((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2))**0.5</div><div class="line">    duration = distance/522.8*723.0</div><div class="line">    # 控制手机触屏时间</div><div class="line">    os.system(&apos;adb shell input swipe 100 100 100 100 &apos; + str(int(round(duration))))</div><div class="line"></div><div class="line"></div><div class="line">def on_calck(event, coor=[]):</div><div class="line">    # 记录两个触屏坐标</div><div class="line">    coor.append((event.xdata, event.ydata))</div><div class="line">    if len(coor) == 2:</div><div class="line">        jump_to_next(coor.pop(), coor.pop())</div><div class="line"></div><div class="line">figure = plt.figure()</div><div class="line">while(True):</div><div class="line">    axes_image = plt.imshow(get_screen_image(), animated=True)</div><div class="line">    # 为鼠标点击设置回调函数</div><div class="line">    figure.canvas.mpl_connect(&apos;button_press_event&apos;, on_calck)</div><div class="line">    # 暂停刷新图像，使用show就不得不关闭再打开实现刷新</div><div class="line">    plt.pause(0.9)</div></pre></td></tr></table></figure>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>以前我一直使用Beautiful Soup，又或者一些框架里的Xpath来解析HTML，今天在偶然间接触到 lxml，被他的事件驱动解析吸引，有种相见恨晚的感觉，用起来非常的爽。</p>
+<p>HTML解析库有很多，比如HTMLParser也是事件驱动，但是它的文档容错能力弱，html5lib解析起来速度慢，lxml速度还行，容错能力也强。</p>
+<h3 id="Event-driven-paring"><a href="#Event-driven-paring" class="headerlink" title="Event-driven paring"></a>Event-driven paring</h3><p>lxml.etree有两种事件驱动的解析起接口，一个在构建树（iterparse）时生成解析器事件，另一个不根据树构建树，而是用SAX-like风格调用一个目标对象的回调方法。SAX是Simple API for XML？</p>
+<h3 id="使用目标解析器方法"><a href="#使用目标解析器方法" class="headerlink" title="使用目标解析器方法"></a>使用目标解析器方法</h3><p>目标解析器是可以实现以下方法的类：</p>
+<ol>
+<li>start 访问标签的起始部分时触发，如打开<a href="#">；</a></li>
+<li>end 访问标签的闭合部分时触发，如 </li>
+<li>data 触发文本子节点并访问该文本</li>
+<li>close 在解析完成后触发</li>
+</ol>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><pre><code>class HtmlParser():
+    def __init__(self, response):
+        self._parse(response)
+        print(response.content)
+
+    def start(self, tag, attrs):
+        print(&quot;start-----------------------&quot;)
+        print(tag)
+
+    def end(self, tag):
+        print(&quot;end-------------------------&quot;)
+        print(tag)
+
+    def close(self):
+        print(&quot;called close&quot;)
+
+    def _parse(self, response):
+        parser = etree.HTMLParser(target=self, recover=True)
+        try:
+            etree.fromstring(response.content, parser)
+        except ValueError:
+            pass
+
+import requests
+
+web = requests.get(&quot;https://www.baidu.com&quot;)
+a = HtmlParser(web)
+pass
+</code></pre><p>上面这个类，实例化时会根据网页中的标签依次触发，你可以在触发的函数里面写好处理，比如表单的填充。用起来非常爽</p>
 
       
 
@@ -235,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://peicx.github.io/2018/01/18/微信跳一跳辅助/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://peicx.github.io/2018/03/28/lxml-Event-driven-parsing/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -249,18 +285,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/20/Django的Model与元类/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Django的Model与元类
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/10/ES安装问题集锦/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ES安装问题集锦</div>
+    <a href="/2018/03/09/Django权限验证代码的理解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Django权限验证代码的理解</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -287,7 +314,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Event-driven-paring"><span class="toc-number">2.</span> <span class="toc-text">Event-driven paring</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用目标解析器方法"><span class="toc-number">3.</span> <span class="toc-text">使用目标解析器方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#举例"><span class="toc-number">4.</span> <span class="toc-text">举例</span></a></li></ol>
                     </div>
                 </span>
             </div>

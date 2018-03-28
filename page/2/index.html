@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://peicx.github.io">
-  <title>微信跳一跳辅助 | 小蜗牛</title>
+  <title>小蜗牛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
-<meta property="og:type" content="article">
-<meta property="og:title" content="微信跳一跳辅助">
-<meta property="og:url" content="http://peicx.github.io/2018/01/18/微信跳一跳辅助/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="小蜗牛">
+<meta property="og:url" content="http://peicx.github.io/page/2/index.html">
 <meta property="og:site_name" content="小蜗牛">
-<meta property="og:description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T13:27:01.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信跳一跳辅助">
-<meta name="twitter:description" content="闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。 原理使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。 代码123456789101112131415161718">
+<meta name="twitter:title" content="小蜗牛">
   
     <link rel="alternative" href="/atom.xml" title="小蜗牛" type="application/atom+xml">
   
@@ -154,29 +150,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-微信跳一跳辅助" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-大一过完了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      微信跳一跳辅助
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/10/大一过完了/">大一过完了</a>
     </h1>
   
 
         
-        <a href="/2018/01/18/微信跳一跳辅助/" class="archive-article-date">
-  	<time datetime="2018-01-18T01:22:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
+        <a href="/2016/07/10/大一过完了/" class="archive-article-date">
+  	<time datetime="2016-07-10T03:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>闲暇时，自己就也写了一个，只是网上的都是自动进行图片处理，算出距离。我这个是把图片传回电脑，然后手动点击小人的位置和下一个跳板的中心来手动获取两个坐标，然后用勾股定理算出距离。虽然写的非常low，我试了下，可以跳400多，后来是嫌费劲就不跳了。</p>
-<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>使用安卓ADB驱动，控制手机，实时从手机获得截图，并分析距离，电脑模拟触屏时间，完成辅助。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">import PIL, numpy, os</div><div class="line"># 这个模块便于绑定鼠标事件，记录鼠标点击位置</div><div class="line">import matplotlib.pyplot as plt</div><div class="line"></div><div class="line">def get_screen_image():</div><div class="line">    # 电脑控制手机截屏</div><div class="line">    os.system(&apos;adb shell screencap -p /sdcard/screen.png&apos;)</div><div class="line">    # 把截图复制到电脑</div><div class="line">    os.system(&apos;adb pull /sdcard/screen.png&apos;)</div><div class="line">    return numpy.array(PIL.Image.open(&apos;screen.png&apos;))</div><div class="line"></div><div class="line">def jump_to_next(point1, point2):</div><div class="line">    x1, y1 = point1; x2, y2 = point2</div><div class="line">    distance = ((x1-x2)*(x1-x2)+ (y1-y2)*(y1-y2))**0.5</div><div class="line">    duration = distance/522.8*723.0</div><div class="line">    # 控制手机触屏时间</div><div class="line">    os.system(&apos;adb shell input swipe 100 100 100 100 &apos; + str(int(round(duration))))</div><div class="line"></div><div class="line"></div><div class="line">def on_calck(event, coor=[]):</div><div class="line">    # 记录两个触屏坐标</div><div class="line">    coor.append((event.xdata, event.ydata))</div><div class="line">    if len(coor) == 2:</div><div class="line">        jump_to_next(coor.pop(), coor.pop())</div><div class="line"></div><div class="line">figure = plt.figure()</div><div class="line">while(True):</div><div class="line">    axes_image = plt.imshow(get_screen_image(), animated=True)</div><div class="line">    # 为鼠标点击设置回调函数</div><div class="line">    figure.canvas.mpl_connect(&apos;button_press_event&apos;, on_calck)</div><div class="line">    # 暂停刷新图像，使用show就不得不关闭再打开实现刷新</div><div class="line">    plt.pause(0.9)</div></pre></td></tr></table></figure>
+        <hr>
+<p>我逝去的大一。</p>
+<p><strong>我的大一还算是很幸运的</strong>。<br>大一我有幸能跟着信息化办的老师学习，在此期间学到一些Centos基础，同时开阔了视野，见识了很多。由于有数据结构的基础，下学期有幸跟着一哥去学hybird 开发，同时有机会接触到道灵哥和一山哥。在他们带领下，我逐渐学习了js，Angular Js  Node.js，MDL，Github。这些让我感到很幸运。</p>
+<p><strong>同时，我的大一还算是比较失败的</strong>。</p>
+<p>为什么这么说，跟着一哥学了一阵子后，不知怎么地我就非常膨胀了，自信心爆棚，这种状态持续了很久。我逐渐意识到我觉得我对自己的判断有了很大偏差。觉得知乎上有人说的非常对，引用下，与大家共勉。</p>
+<blockquote>
+<p>前端的新技术，不是门坎较低、就是给人一种容易掌握的错觉。Less/Sass 不谈，<br>你学了 Angular，懂得 data-binding、router 等背后的实现原理吗？<br>你虽会用 Node 搭建一个本地 server，但懂得 I/O 流程、HTTP 和操作系统知识吗？<br>你能不诉诸书本和搜索引擎，写出几个 JS 设计模式和继承模式吗？<br>你能完全脱离 jQuery 来操纵 DOM 和 Ajax 吗？<br>你知道怎么写 CSS 选择器能让浏览器解释速度最快吗？<br>你会在开发过程中，下意识地追求 HTTP 请求最少吗？……</p>
+</blockquote>
+<p>显然我不能。</p>
+<p>我真的需要重新审视自己。</p>
+<p>被一时的自我成就和满足所障目，而忘却了技术最重要的永远是基础。</p>
+<p>与大家共勉！！！</p>
 
       
 
@@ -186,86 +193,29 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/life//" class="article-tag-list-link color3">生活</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/07/10/大一过完了/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://peicx.github.io/2018/01/18/微信跳一跳辅助/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/01/20/Django的Model与元类/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Django的Model与元类
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/08/10/ES安装问题集锦/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ES安装问题集锦</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -280,32 +230,136 @@
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li></ol>
-                    </div>
-                </span>
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-时间管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/09/时间管理/">时间管理</a>
+    </h1>
+  
+
+        
+        <a href="/2016/07/09/时间管理/" class="archive-article-date">
+  	<time datetime="2016-07-09T11:38:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>今天读了《时间管理》这本书，顺便写下一些心得，算是方便以后回顾和督促自己完成吧。</p>
+<h3 id="一-自我意识是先决条件。"><a href="#一-自我意识是先决条件。" class="headerlink" title="一.自我意识是先决条件。"></a><strong>一.自我意识是先决条件。</strong></h3><p>为什么这么说呢？因为只有当你真正意识到你是如何支配时间的，你才有可能去管理你的时间。（共勉！！！）</p>
+<h3 id="二-目标设定是第一步。"><a href="#二-目标设定是第一步。" class="headerlink" title="二.目标设定是第一步。"></a><strong>二.目标设定是第一步。</strong></h3><p>目标很重要，但确定目标是为了更好的执行。</p>
+<h3 id="三-选择是艰难的。"><a href="#三-选择是艰难的。" class="headerlink" title="三.选择是艰难的。"></a><strong>三.选择是艰难的。</strong></h3><p>现在，你需要一个彻底的反省。你需要找到一个平衡点。你到底想要得过且过–做你现在马上想做的事呢–还是为未来着想–做那些能让你今后过上自己想要的生活的事情呢？</p>
+<p>我不打算站在这里告诉你：只要你努力奋斗，就可以得到任何你想要的东西。生活却偏偏不是这样。有很多因素和时间都超出了人们控制能力的范围，而这些将会对你的生活走向产生影响。</p>
+<p>但我可以告诉你的事：通过做出正确的选择，通过使自己保持一种想要成功的姿态，你可以获得更大的机会，去实现你想要达成的目标。</p>
+<p>时间管理在很大程度上讲的就是选择。既然你已经确立了高度的时间意识，并设定了一些目标，那么，你就需要面对竞争的需求所带来的压力了。朋友游戏邀请，晚睡的渴望，承诺和义务，互联网的诱惑，以及任何会对你造成干扰，影响你达到目标的事情。</p>
+<p>目标的设定只是确定一个大致的方向，人生往往一波三折，变幻无常，难以预测。尽管如此，通过不断地对自己的目标进行反思和适时的调整，你就更有可能让自己的生活沿着既定的日程向前进发–而不是随波逐流，听天由命。</p>
+<h3 id="四-你可以创造时间。"><a href="#四-你可以创造时间。" class="headerlink" title="四.你可以创造时间。"></a><strong>四.你可以创造时间。</strong></h3><p>   1）精力</p>
+<p>斯坦女士写过一个有名的警句：“玫瑰毕竟是玫瑰。”（A rose is a rose is a rose.) 她的观点是无论你把某种东西成为什么，这种东西的本质是不会改变的。歌特鲁斯 斯坦和鸭子与时间管理有关系吗？嗯，他们的出现只是为了引出我们需要讨论的另一个概念：在你追求有效的时间管理的过程中，并非所有的时间都是相同的。</p>
+<p>   2）寻找时间空隙</p>
+<blockquote>
+<p>要善于利用等待的时间</p>
+</blockquote>
+<p>   3）杂乱不堪是高效的大敌。</p>
+<blockquote>
+<p> 物应各有其所，亦应各在其所。</p>
+</blockquote>
+<h3 id="五-拖延是大敌。"><a href="#五-拖延是大敌。" class="headerlink" title="五.拖延是大敌。"></a><strong>五.拖延是大敌</strong>。</h3><h3 id="六-要有一颗“似水之心”。"><a href="#六-要有一颗“似水之心”。" class="headerlink" title="六.要有一颗“似水之心”。"></a><strong>六.要有一颗“似水之心”</strong>。</h3><h3 id="七-计划和准备是值得花精力去做的。"><a href="#七-计划和准备是值得花精力去做的。" class="headerlink" title="七.计划和准备是值得花精力去做的。"></a><strong>七.计划和准备是值得花精力去做的。</strong></h3><p>你应该每天至少花十分钟时间，来规划你这一天如何度过。如果你是一只夜猫子，那就在前一天晚上做好计划。<br>问自己一些类似这样的问题：</p>
+<blockquote>
+<p>今天我想要完成哪些工作？<br>    我有多少时间可以用来完成这些工作？<br>    这些工作的完成顺序。</p>
+</blockquote>
+<p>过分计划会让事情走向反面，有些人沉迷计划的过程。他们总是分析来分析去，因为分析比实际做决定更容易。有时，分析过程掩盖了对采取行动的恐惧。在某一时点，你必须采取行动。</p>
+<h3 id="八-通过确定优先顺序，你可以做到去芜存菁。"><a href="#八-通过确定优先顺序，你可以做到去芜存菁。" class="headerlink" title="八.通过确定优先顺序，你可以做到去芜存菁。"></a><strong>八.通过确定优先顺序，你可以做到去芜存菁。</strong></h3><p>《吃掉那只青蛙》书中指出：</p>
+<blockquote>
+<p>在你决定要做什么，并对其进行排序的时候，你首先要解决那些最难办的项目。</p>
+</blockquote>
+<p>吃青蛙的原则：如果你必须要吃掉两只青蛙，那么，你要先吃较丑的那一只。这也就是说，如果你面前有两项重要的任务要完成，那么，你要先从那个最大，最困难而且最重要的任务开始做起。要督促自己马上开始，然后一直坚持，直到任务完成，你再去做其他的事情</p>
+<h3 id="九-专心致志是问题的关键所在。"><a href="#九-专心致志是问题的关键所在。" class="headerlink" title="九.专心致志是问题的关键所在。"></a><strong>九.专心致志是问题的关键所在。</strong></h3><p>专注。。。。。。。专注。。。。。。。专注<br>排除让你分心的事情。</p>
+<blockquote>
+<p>“走路的时候，走路。吃饭的时候，吃饭。”–禅宗谚语</p>
+</blockquote>
+<p>注意不要用忙碌来取代效率。<br>费瑞斯指出：那些整天忙忙碌碌的人–忙完了一个活动又忙完另一个–事实上可能是以牺牲有效性为代价而维持其忙碌状态的。你的目标是富有成效–即你所做的事情必须能够让你更加接近你的目标。</p>
+<blockquote>
+<p> 二八定律：你的80%的成就来自你的20%的行为。</p>
+</blockquote>
+<p>怎么应用到生活中去呢？<br>考虑你做的事情中，那一件最有可能帮你达成这个目标？<br>那么在这件事情上，你应该投入最大的精力和注意力。</p>
+<p>只要有可能，要一次性或者在一个时间段内完成一项任务。</p>
+<blockquote>
+<p>帕金森法则说明：完成一项工作的时间会膨胀到你所拥有的时间的极限。如果你有3个小时去完成一个项目，那么，你将在3个小时内完成它。如果你有一个星期时间，那么它将会用去你一个星期，而且很有可能，你所完成的产品也不见得就比3个小时完成的产品更好。</p>
+</blockquote>
+<hr>
+<p>虽然时间管理对于一个人的成功来讲是一个关键的因素，但那并不意味着良好的时间管理者总是在忙于一个又一个活动，就这样度过一生。也存在这样的情况：有时，我会骑着自行车去一些地方闲逛，只是有因为我喜欢悠闲的单车之旅。吉姆 兰德尔如是说。</p>
+<hr>
+<p>参考资料：<br>[1] Jim Randel,舒建广译,2012.The Skinny on Time Management.上海交通大学出版社.1-215<br>[2] Brian Trancy,2009.Eat That Frog.化学工业出版社</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/life//" class="article-tag-list-link color3">生活</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/07/09/时间管理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
             </div>
         </div>
+        
         
     </div>
 </aside>
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -328,8 +382,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
